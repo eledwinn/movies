@@ -3,11 +3,24 @@
 @section('title', 'Crear nueva película')
 
 @section('content')
-    <ul>
-        @forelse ($movies as $movie)
-        <li>{{ $movie }}</li>
-        @empty
-            <li>No hay usuarios registrados</li>
-        @endforelse
-    </ul>
+
+
+@if ($errors->any())
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+            <li> {{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif
+
+<form method="POST" action="{{url('movies/create')}}">
+    {!! csrf_field() !!}
+
+<input type="text" name="code" value="{{old('code')}}" >
+    <input type="description" name="description" value="{{old('description')}}" >
+
+    <button type="submit">Crear película</button>
+</form>
 @endsection
