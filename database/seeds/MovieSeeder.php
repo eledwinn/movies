@@ -17,16 +17,19 @@ class MovieSeeder extends Seeder
 
         Movie::create([
             'code'=> 'CODIGO',
+            'name'=> 'UNA PELICULA',
             'description'=> 'PELICULA DESC'
         ]);
 
         Movie::create([
             'code'=> 'CODIGO1',
+            'name'=> 'UNA PELICULA 2',
             'description'=> 'PELICULA DESC'
         ]);
 
         Movie::create([
             'code'=> 'CODIGO2',
+            'name'=> 'UNA PELICULA 3',
             'description'=> 'PELICULA DESC'
         ]);
     }

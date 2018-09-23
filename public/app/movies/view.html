@@ -1,0 +1,17 @@
+Ver
+
+{{movie}}
+
+<div class="row">
+    <div class="col-md-6">
+        <form ng-submit="submit()">
+            <div class="form-group">
+                <label for="code">Código</label>
+                <input type="file" ng-model="image" class="form-control" id="code" aria-describedby="Código de la película" placeholder="Ingrese el código único de la película" required>
+                <small id="codeHelp" class="form-text text-muted">El código debe ser único para cada película.</small>
+            </div>
+              
+            <button type="submit" class="btn btn-primary">Crear película</button>
+        </form>
+    </div>
+</div>

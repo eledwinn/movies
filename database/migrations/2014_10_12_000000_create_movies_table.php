@@ -16,7 +16,9 @@ class CreateMoviesTable extends Migration
         Schema::create('movies', function (Blueprint $table) {
             $table->increments('id');
             $table->string('code')->unique();
+            $table->string('name');
             $table->string('description');
+            $table->string('url')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });

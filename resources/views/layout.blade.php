@@ -1,16 +1,26 @@
 <!DOCTYPE html>
-<html lang="{{ app()->getLocale() }}">
+<html lang="{{ app()->getLocale() }}" ng-app="moviesApp">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">  
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="Prueba técnica grupodot">
     <meta name="author" content="Edwin Gómez">
     <link rel="icon" href="favicon.ico">
-    <title>@yield('title') - grupodot</title>
+    <title>grupodot</title>
     <!-- CSS libs -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <script src="https://code.angularjs.org/1.7.2/angular.min.js" type="text/javascript"></script>
+    <script src="https://code.angularjs.org/1.7.2/angular-route.min.js" type="text/javascript"></script>
+    <script src="https://code.angularjs.org/1.7.2/angular-resource.min.js" type="text/javascript"></script>
 
+    <script src="{{asset('app/app.js')}}" type="text/javascript"></script>
+    <script src="{{asset('app/services.js')}}" type="text/javascript"></script>
+    <script src="{{asset('app/movies/MovieListController.js')}}" type="text/javascript"></script>
+    <script src="{{asset('app/movies/NewMovieController.js')}}" type="text/javascript"></script>
+    <script src="{{asset('app/movies/ViewMovieController.js')}}" type="text/javascript"></script>
+    
+    <link href="" rel="stylesheet">
 
     <!-- Custom styles -->
     <link href="{{asset('css/styles.css')}}" rel="stylesheet">
@@ -43,9 +53,9 @@
     </header>
 
     <main role="main">
-
-      @yield('content')
-
+      <div class="container">
+        <div ng-view></div>
+      </div>
     </main>
 
     <footer class="text-muted">

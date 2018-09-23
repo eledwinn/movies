@@ -11,7 +11,6 @@
 |
 */
 
-Route::get('/', 'HomeController@index')->name('home');
-
-Route::get('/movies/new', 'CreateMovieController@index')->name('movies.new');
-Route::post('movies/create', 'CreateMovieController@create');
+Route::get('/', function () {
+    return view('layout');
+})->name('home');

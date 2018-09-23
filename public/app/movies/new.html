@@ -1,0 +1,29 @@
+<h3 class="mb-3">Crear nueva pelicula</h3>
+
+<div class="alert alert-danger" ng-if="errors">
+    <ul class="m-0">
+        <li ng-repeat="e in errors"> {{e[0]}} </li>
+    </ul>
+</div>
+
+<div class="row">
+    <div class="col-md-6">
+        <form ng-submit="submit()">
+            <div class="form-group">
+                <label for="code">Código</label>
+                <input type="text" ng-model="movie.code" class="form-control" id="code" aria-describedby="Código de la película" placeholder="Ingrese el código único de la película" required>
+                <small id="codeHelp" class="form-text text-muted">El código debe ser único para cada película.</small>
+            </div>
+            <div class="form-group">
+                <label for="name">Nombre</label>
+                <input type="text" ng-model="movie.name" class="form-control" id="name" maxlength="10" placeholder="Ingresa el nombre" required>
+            </div>
+            <div class="form-group">
+                <label for="description">Descripción</label>
+                <input type="text" ng-model="movie.description" class="form-control" id="description" maxlength="255" placeholder="Ingresa la descripción" required>
+            </div>
+              
+            <button type="submit" class="btn btn-primary">Crear película</button>
+        </form>
+    </div>
+</div>
