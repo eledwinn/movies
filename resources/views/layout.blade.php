@@ -34,15 +34,17 @@
               <h4 class="text-white">Acerca de esta página</h4>
               <p class="text-muted">Prueba técnica desarrollador PHP, esta prueba permite registrar y visualizar películas registradas, adicional a esto expone una api que puede ser consultada en <a href="/api">este enlace</a>.</p>
             </div>
-            <div class="col-sm-4 offset-md-1 py-4"></div>
+            <div class="col-sm-4 offset-md-1 py-4">
+                <img src="https://www.grupodot.com/img/logo-gd.png" alt="logo grupo dot">
+            </div>
           </div>
         </div>
       </div>
       <div class="navbar navbar-dark bg-dark shadow-sm">
         <div class="container d-flex justify-content-between">
-          <a href="#" class="navbar-brand d-flex align-items-center">
+          <a href="/" class="navbar-brand d-flex align-items-center">
             <span class="fa fa-video icon"></span>
-            <strong>Movies - @yield('title')</strong>
+            <strong>Movies</strong>
           </a>
           
           <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
@@ -54,21 +56,18 @@
 
     <main role="main">
       <div class="container">
-        <div ng-view></div>
+        @yield('content')
       </div>
     </main>
 
     <footer class="text-muted">
       <div class="container">
         
-        <p>Album example is © Bootstrap, but please download and customize it for yourself!</p>
-        <p>New to Bootstrap? <a href="http://getbootstrap.com/docs/4.1/">Visit the homepage</a> or read our <a href="http://getbootstrap.com/docs/4.1/getting-started/">getting started guide</a>.</p>
+        <p>Por Edwin Gómez para <a href="https://www.grupodot.com/" target="_blank">grupodot</a></p>
+        
       </div>
     </footer>
 
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
    
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
