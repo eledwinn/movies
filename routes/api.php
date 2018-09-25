@@ -18,3 +18,4 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::apiResource('movies', 'MovieController');
+Route::get('movies/find/{filter}', 'MovieController@search');

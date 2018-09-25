@@ -10,16 +10,9 @@
     <!-- CSS libs -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
-    <script src="https://code.angularjs.org/1.7.2/angular.min.js" type="text/javascript"></script>
-    <script src="https://code.angularjs.org/1.7.2/angular-route.min.js" type="text/javascript"></script>
-    <script src="https://code.angularjs.org/1.7.2/angular-resource.min.js" type="text/javascript"></script>
-
-    <script src="{{asset('app/app.js')}}" type="text/javascript"></script>
-    <script src="{{asset('app/services.js')}}" type="text/javascript"></script>
-    <script src="{{asset('app/movies/MovieListController.js')}}" type="text/javascript"></script>
-    <script src="{{asset('app/movies/NewMovieController.js')}}" type="text/javascript"></script>
-    <script src="{{asset('app/movies/ViewMovieController.js')}}" type="text/javascript"></script>
     
+    @yield('resources')
+
     <link href="" rel="stylesheet">
 
     <!-- Custom styles -->
@@ -32,11 +25,41 @@
           <div class="row">
             <div class="col-sm-8 col-md-7 py-4">
               <h4 class="text-white">Acerca de esta página</h4>
-              <p class="text-muted">Prueba técnica desarrollador PHP, esta prueba permite registrar y visualizar películas registradas, adicional a esto expone una api que puede ser consultada en <a href="/api">este enlace</a>.</p>
+              <p class="text-muted">Prueba técnica desarrollador PHP, esta prueba permite registrar y visualizar películas registradas, adicional a esto expone una api con las siguientes opciones.</p>
+              
             </div>
             <div class="col-sm-4 offset-md-1 py-4">
                 <img src="https://www.grupodot.com/img/logo-gd.png" alt="logo grupo dot">
             </div>
+            
+            <table class="text-white text-sm table table-sm table-dark">
+                <tr>
+                  <td>Método&nbsp;</td>
+                  <td>Uri</td>
+                  <td>Descripción</td>
+                </tr>
+                <tr>
+                  <td>GET</td>
+                  <td><code>/api/movies</code></td>
+                  <td>Consulta todas las peliculas.</td>
+                </tr>
+                <tr>
+                  <td>GET</td>
+                  <td><code>/api/movies/{id}</code></td>
+                  <td>Consulta una película por su id.</td>
+                </tr>
+                <tr>
+                  <td>POST</td>
+                  <td><code>/api/movies</code></td>
+                  <td>Permite guardar una nueva película.</td>
+                </tr>
+                <tr>
+                  <td>GET</td>
+                  <td><code>/api/movies/find/{text}</code></td>
+                  <td>Permite buscar un listado de películas por una palabra clave, buscará por código, nombre y descripción.</td>
+                </tr>
+                
+              </table>
           </div>
         </div>
       </div>

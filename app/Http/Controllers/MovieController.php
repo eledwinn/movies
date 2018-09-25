@@ -40,4 +40,10 @@ class MovieController extends Controller
     public function update (Request $reguest, Movie $movie) {
 
     }
+
+    public function search ($filter) {
+        return Movie::where('name', 'LIKE', '%'.$filter.'%')
+                    ->orWhere('description', 'LIKE', '%'.$filter.'%')
+                    ->orWhere('code', 'LIKE', '%'.$filter.'%')->get();
+    }
 }

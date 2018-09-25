@@ -1,17 +1,43 @@
-Ver
+<h3 class="mt-3 mb-3">Informe</h3>
 
-{{movie}}
+
+<style>
+    .page-break {
+        page-break-after: always;
+        page-break-inside: avoid;
+        clear:both;
+    }
+    .page-break-before {
+        page-break-before: always;
+        page-break-inside: avoid;
+        clear:both;
+    }
+    /*#html-2-pdfwrapper{
+        position: absolute; 
+        left: 20px; 
+        top: 150px; 
+        bottom: 0; 
+        overflow: auto; 
+        width: 600px;
+    }*/
+</style>
+<div class="mt-3 mb-3">
+    <button ng-click="generate()" class="btn btn-primary"><span class="fa fa-print"></span> Generate PDF</button>
+</div>
+<div id="html-2-pdfwrapper">
+    <div>
+        <label><b>Código:</b> {{movie.code}}</label>
+    </div>
+    <div>
+        <label><b>Nombre:</b> {{movie.code}}</label>
+    </div>
+    <div><b>Descripción:</b></div>
+    <p>{{movie.description}}</p>
+</div>
 
 <div class="row">
-    <div class="col-md-6">
-        <form ng-submit="submit()">
-            <div class="form-group">
-                <label for="code">Código</label>
-                <input type="file" ng-model="image" class="form-control" id="code" aria-describedby="Código de la película" placeholder="Ingrese el código único de la película" required>
-                <small id="codeHelp" class="form-text text-muted">El código debe ser único para cada película.</small>
-            </div>
-              
-            <button type="submit" class="btn btn-primary">Crear película</button>
-        </form>
-    </div>
+    <div ng-repeat="u in movie.urls" class="col-md-3">
+        <img ng-src="{{'/storage/' + u}}" alt="imagen de la película" style="max-width: 100%;"> 
+    </div>    
+
 </div>

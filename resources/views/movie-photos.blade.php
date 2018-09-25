@@ -6,6 +6,16 @@
 Subir imagen para {{ $movie->name }}
 </div>
 
+<div>
+    
+</div>
+
+@if ($error)
+<div class="alert alert-danger" ng-if="errors">
+    {{$error}}
+</div>
+@endif
+
 <form method="POST" action="/movie-photos/{{ $movie->id }}" enctype="multipart/form-data">
      
     <div class="mt-3">

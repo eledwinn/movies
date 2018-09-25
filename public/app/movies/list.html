@@ -3,17 +3,16 @@
     <a class="btn btn-primary" href="#!/movies/new">+ Crear pelicula</a>
 </div>
 <div class="row">
-    <div class="col-md-4" ng-repeat="movie in movies">
+    <div class="col-md-3" ng-repeat="movie in movies">
       <div class="card mb-4 shadow-sm">
-        <img class="card-img-top" ng-src="{{movie.firstUrl ? '/storage/' + movie.firstUrl : 'https://images.immediate.co.uk/volatile/sites/3/2017/11/imagenotavailable1-39de324.png'}}" alt="Card image cap">
+        <img class="card-img-top" ng-src="{{movie.urls && movie.urls['1'] ? '/storage/' + movie.urls['1'] : 'https://images.immediate.co.uk/volatile/sites/3/2017/11/imagenotavailable1-39de324.png'}}" alt="Card image cap">
         <div class="card-body">
           <p class="card-text"><b>{{movie.name}}</b></p>
           <p class="card-text">{{movie.description}}</p>
           <div class="d-flex justify-content-between align-items-center">
             <div class="btn-group">
-              <a class="btn btn-sm btn-outline-secondary" href="/movie-photos/{{movie.id}}" title="Visualizar"><span class="fa fa-eye"></span></a>
+              <a class="btn btn-sm btn-outline-secondary" href="#!/movies/{{movie.id}}" title="Visualizar"><span class="fa fa-eye"></span></a>
               <a class="btn btn-sm btn-outline-secondary" href="/movie-photos/{{movie.id}}" title="Subir imagen"><span class="fa fa-upload"></span></a>
-              <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
             </div>
             <small class="text-muted">Code: {{movie.code}}</small>
           </div>
